@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>San Valentín</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-image: url(https://i.pinimg.com/736x/20/1f/f7/201ff71940c5e20a1ffd13a3f826f840.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .hidden {
+            display: none;
+        }
+        .gif-container img {
+            width: 300px;
+            height: 300px;
+            margin: 10px;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .no-button {
+            transition: all 0.3s ease;
+        }
+        .final-message {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="initial-screen">
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <div class="gif-container">
+            <img src="https://i.pinimg.com/originals/bf/4f/fd/bf4ffd5ed67a0408279938b52add1777.gif" alt="gif1">
+        </div>
+        <div class="buttons">
+            <button class="yes-button">Sí</button>
+            <button class="no-button">No</button>
+        </div>
+    </div>
+    <div class="final-message">
+        <h1>Sabía que dirías que sí, te amo mucho <3</h1>
+        <img src="https://i.pinimg.com/originals/98/a1/17/98a117ef56bb638482596ae65f6a7826.gif" alt="gif gato">
+    </div>
+
+    <script>
+        const noButton = document.querySelector('.no-button');
+        const yesButton = document.querySelector('.yes-button');
+        const initialScreen = document.querySelector('.initial-screen');
+        const finalMessage = document.querySelector('.final-message');
+
+        noButton.addEventListener('mouseover', () => {
+            noButton.style.transform = 'scale(0.5)';
+        });
+
+        noButton.addEventListener('click', () => {
+            noButton.style.display = 'none';
+        });
+
+        yesButton.addEventListener('click', () => {
+            initialScreen.classList.add('hidden');
+            finalMessage.style.display = 'flex';
+        });
+    </script>
+</body>
+</html>
